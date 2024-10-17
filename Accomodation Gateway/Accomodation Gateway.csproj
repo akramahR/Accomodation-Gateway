@@ -7,6 +7,7 @@
     <RootNamespace>Accomodation_Gateway</RootNamespace>
     <UserSecretsId>62da6ea4-6341-4760-be0c-b7f359e47cee</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
   <ItemGroup>

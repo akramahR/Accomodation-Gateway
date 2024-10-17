@@ -1,0 +1,69 @@
+
+services:
+  # Microservice 1
+  roombookingservice:
+    image: roombookingservice:latest
+    container_name: roombookingservice
+    build:
+      context: ../RoomBookinservice  # Path to local clone of Microservice 1 repo
+      dockerfile: RoomBookinService/Dockerfile
+    ports:
+      - "5158:80"
+    networks:
+      - microservices-net
+    environment:
+      - ASPNETCORE_URLS=http://+:80
+      - ASPNETCORE_ENVIRONMENT=Development
+
+  # Microservice 2
+  guestservice:
+    image: guestservice:latest
+    container_name: guestservice
+    build:
+      context: ../GuestService  # Path to local clone of Microservice 2 repo
+      dockerfile: GuestService/Dockerfile
+    ports:
+      - "5159:80"
+    networks:
+      - microservices-net
+    environment:
+      - ASPNETCORE_URLS=http://+:80
+      - ASPNETCORE_ENVIRONMENT=Development
+
+  # Microservice 3
+  reviewservice:
+    image: reviewservice:latest
+    container_name: reviewservice
+    build:
+      context: ../ReviewService  # Path to local clone of Microservice 3 repo
+      dockerfile: ReviewService/Dockerfile
+    ports:
+      - "5160:80"
+    networks:
+      - microservices-net
+    environment:
+      - ASPNETCORE_URLS=http://+:80
+      - ASPNETCORE_ENVIRONMENT=Development
+
+  # API Gateway
+  accomodationgateway:
+    image: accomodationgateway:latest
+    container_name: accomodationgateway
+    build:
+      context: .  
+      dockerfile: "Accomodation Gateway/Dockerfile"
+    ports:
+      - "5157:80"
+    networks:
+      - microservices-net
+    depends_on:
+      - roombookingservice
+      - guestservice
+      - reviewservice
+    environment:
+      - ASPNETCORE_URLS=http://+:80;https://+:443
+      - ASPNETCORE_ENVIRONMENT=Development
+
+networks:
+  microservices-net:
+    driver: bridge
