@@ -10,7 +10,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Configuration.AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
+// Get environment name
+var environment = builder.Environment.EnvironmentName;
+
+// Load the appropriate Ocelot configuration based on environment
+builder.Configuration.AddJsonFile($"ocelot.{environment}.json", optional: false, reloadOnChange: true);
+
 builder.Services.AddOcelot(builder.Configuration);
 var app = builder.Build();
 

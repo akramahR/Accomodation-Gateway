@@ -1,0 +1,79 @@
+{
+  "Routes": [
+    { // Room Service
+      "DownstreamPathTemplate": "/api/rooms/book",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "roombookingservice", // Use service name
+          "Port": 80 // Use port exposed in the container
+        }
+      ],
+      "UpstreamPathTemplate": "/api/rooms/book",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/rooms/room-types",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "roombookingservice", // Use service name
+          "Port": 80 // Use port exposed in the container
+        }
+      ],
+      "UpstreamPathTemplate": "/api/rooms/room-types",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/rooms/room/{roomId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "roombookingservice", // Use service name
+          "Port": 80 // Use port exposed in the container
+        }
+      ],
+      "UpstreamPathTemplate": "/api/rooms/room/{roomId}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    { // Guest Service
+      "DownstreamPathTemplate": "/api/requests/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "guestservice", // Use service name
+          "Port": 80 // Use port exposed in the container
+        }
+      ],
+      "UpstreamPathTemplate": "/api/requests/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    { // Reviews Service
+      "DownstreamPathTemplate": "/api/reviews",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "reviewsservice", // Use service name
+          "Port": 80 // Use port exposed in the container
+        }
+      ],
+      "UpstreamPathTemplate": "/api/reviews",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/reviews/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "reviewsservice", // Use service name
+          "Port": 80 // Use port exposed in the container
+        }
+      ],
+      "UpstreamPathTemplate": "/api/reviews/{id}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:5157" // This should be fine as is
+  }
+}

@@ -13,7 +13,7 @@ services:
       - microservices-net
     environment:
       - ASPNETCORE_URLS=http://+:80
-      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_ENVIRONMENT=Docker
 
   # Microservice 2
   guestservice:
@@ -28,7 +28,7 @@ services:
       - microservices-net
     environment:
       - ASPNETCORE_URLS=http://+:80
-      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_ENVIRONMENT=Docker
 
   # Microservice 3
   reviewservice:
@@ -43,7 +43,7 @@ services:
       - microservices-net
     environment:
       - ASPNETCORE_URLS=http://+:80
-      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_ENVIRONMENT=Docker
 
   # API Gateway
   accomodationgateway:
@@ -62,7 +62,7 @@ services:
       - reviewservice
     environment:
       - ASPNETCORE_URLS=http://+:80;https://+:443
-      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_ENVIRONMENT=Docker
 
 networks:
   microservices-net:
