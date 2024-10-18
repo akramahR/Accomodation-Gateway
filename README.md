@@ -28,6 +28,7 @@ git clone https://github.com/akramahR/ReviewService.git
 git clone https://github.com/akramahR/RoomBookinService.git
 ```
 
+Alternatively if you have source code place all of them in the same folder.
 ### Step 2: Navigate to the API Gateway
 
 After cloning the repositories, navigate to the **Accommodation Gateway** directory:
