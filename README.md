@@ -90,7 +90,7 @@ A **Postman collection** is available for testing the APIs of the accommodation 
 
 Click the link below to import the Postman collection:
 
-[Accommodation Management System Postman Collection](https://elements.getpostman.com/redirect?entityId=39074281-42f45bcc-ba3c-4291-90cd-0322181b414e&entityType=collection)
+https://elements.getpostman.com/redirect?entityId=39074281-42f45bcc-ba3c-4291-90cd-0322181b414e&entityType=collection
 
 Alternatively, you can import it manually in Postman:
 1. Open Postman and go to the **Collections** tab.
