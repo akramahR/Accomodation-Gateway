@@ -29,6 +29,7 @@ git clone https://github.com/akramahR/RoomBookinService.git
 ```
 
 Alternatively if you have source code place all of them in the same folder.
+
 ### Step 2: Navigate to the API Gateway
 
 After cloning the repositories, navigate to the **Accommodation Gateway** directory:
@@ -130,6 +131,7 @@ services:
       - ASPNETCORE_ENVIRONMENT=Docker
 ```
 change ports "5158:80" to "{your-port}:80"
+
 ## Stopping the System
 
 To stop the running containers, press `CTRL + C` in the terminal where the system is running, or run the following command in the **Accommodation Gateway** directory:
