@@ -13,6 +13,7 @@ All services are developed in **.NET 7**, containerized using **Docker**, and or
 Before setting up the system, ensure the following software is installed on your machine:
 - [Docker](https://docs.docker.com/get-docker/)
 - [.NET 7 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) (optional)(for development purposes only, if you want to run the services locally)
+- - [Postman](https://www.postman.com/downloads/) (for API testing)
 
 ## System Setup
 
@@ -78,6 +79,33 @@ Each service provides its own Swagger UI for API documentation and testing. You 
 
 - **Room Booking Service Swagger**:  
   [http://localhost:5160/swagger](http://localhost:5160/swagger)
+
+## Using Postman for API Testing
+
+A **Postman collection** is available for testing the APIs of the accommodation management system.
+
+### Step 1: Import the Postman Collection
+
+Click the link below to import the Postman collection:
+
+[Accommodation Management System Postman Collection](https://elements.getpostman.com/redirect?entityId=39074281-42f45bcc-ba3c-4291-90cd-0322181b414e&entityType=collection)
+
+Alternatively, you can import it manually in Postman:
+1. Open Postman and go to the **Collections** tab.
+2. Click on the **Import** button.
+3. Paste the link above into the **Import From Link** section and click **Continue**.
+
+### Step 2: Testing the APIs
+
+Once imported, you will find predefined requests for each service (Room Booking, Guest, and Review Services). These requests are already set up to interact with the running system on `localhost`. To test the APIs:
+1. Start the services by following the setup steps above.
+2. Open **Postman**.
+3. Select a request from the **Accommodation Management System** collection.
+4. Click **Send** to execute the request and view the response.
+
+### Step 3: Customizing Requests
+
+Feel free to modify the request parameters, body, or headers within Postman to test different scenarios and inputs for each microservice.
 
 ## Configuration
 
