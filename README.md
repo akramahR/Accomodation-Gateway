@@ -1,5 +1,7 @@
 # Accommodation Management System
 
+![serviceOriented drawio](https://github.com/user-attachments/assets/6fe3a68b-5469-4f97-b033-eaf1cff0053a)
+
 This project implements a microservices architecture for an accommodation management system, consisting of the following services:
 - **Accommodation Gateway** (API Gateway)
 - **Guest Service**
